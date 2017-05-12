@@ -3,16 +3,16 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 丁松的博客 
+title: Ding Song
 subtitle:
 description:
-author: 
-language: zh-CN
+author: Ding Song
+language: en
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://cnds.github.io
+url: http://cnds.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -63,7 +63,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: hiero
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

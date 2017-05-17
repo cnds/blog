@@ -6,7 +6,7 @@ tags:
     - python
 ---
 
-### add_route(self, uri_template, resource, *args, **kwargs)
+### add_route(self, uri_template, resource, \*args, \**kwargs)
 
 添加路由，这个方法的参数，uri_template就是路由的路径，resource是处理请求的responder的类的实例，一般responder是on_get,on_post等方法
 
@@ -21,3 +21,5 @@ tags:
 * 具体方法在routing　CompileRouter中(待补充）
 
 ### add_sink(self, sink, prefix=r'/')
+### add_error_handler(self, exception, handler=None)
+### set_error_serializer(self, serializer)

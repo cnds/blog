@@ -3,7 +3,7 @@ title: falcon-1.1.0源码笔记II
 date: 2017-05-16 10:39:37
 tags:
     - 源码笔记
-    - python
+    - Python
 ---
 
 ### add_route(self, uri_template, resource, \*args, \**kwargs)

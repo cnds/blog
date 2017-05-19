@@ -48,5 +48,10 @@ tags:
 ````
 这里将options中的设置传入parse_query_string方法，得到一个字典
 
-### 通过header_property将HTTP header设置成属性，另外也添加了一些属性，比如client_accept_json(通过方法client_accepts), params(self._params)等
+#### 通过header_property将HTTP header设置成属性，另外也添加了一些属性，比如client_accept_json(通过方法client_accepts), params(self._params)等
 
+#### 最后还有一些自定义的方法，用来获取query_string里的参数，比如get_param,get_param_as_int等
+
+#### 可以看到，整个Request class主要是存储了http请求的信息，并且定义成为自身属性(property)，在API class调用的时候，这些参数可以保证每次请求的独立性，即每次请求都有一个单独的req
+
+#### 每个请求的req各不相同，在API class中 \__call__运行的时候，通过_get_responder获得的responder， params, resource, uri_template也不相同

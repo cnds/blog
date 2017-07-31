@@ -22,5 +22,5 @@ setattr(resource, responder_name, do_before_all)
 ````
 
 ### after
-####　和before类似，只是处理顺序变成了先responder后shim
+#### 和before类似，只是处理顺序变成了先responder后shim
 * action(req, response, resource)

@@ -2,8 +2,8 @@
 title: falcon-1.1.0源码阅读笔记V
 date: 2017-05-23 10:36:10
 tags:
-	- Python
-	- 源码笔记
+    - Python
+    - 源码笔记
 ---
 
 ## Hook decorators
@@ -12,11 +12,15 @@ tags:
 
 ### before
 #### 这个修饰器实际是一个闭包，将action通过闭包传到内部函数_before
+
 * action(req, resp, resource, params)
-* _before首先或者responder
+* _before首先获得responder
 * 然后通过_wrap_with_before函数处理action和responder
-* _wrap_with_before函数也是一个闭包，按将action函数传给shim，然后按顺序运行shim, responder
+* _wrap_with_before函数也是一个闭包，按将action函数传给shim，然后按顺序
+运行shim, responder
+
 * 然后将resource里的responder设置成_wrap_with_before的返回值
+
 ````python
 setattr(resource, responder_name, do_before_all)
 ````

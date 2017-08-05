@@ -1,10 +1,10 @@
 ## 基本介绍
-* 参考官方文档https://docs.mongodb.com/manual/tutorial/perform-two-phase-commits，部分细节需要做一下调整
+* 参考官方文档 https://docs.mongodb.com/manual/tutorial/perform-two-phase-commits
 * 整个操作过程实际是一个两步提交的过程，涉及到三张表，包括目标表destination和原始的表source，还有一张transaction用来记录整个过程的状态
 * 状态主要有Initial、Pending、Applied、Done，这四个状态是操作正常时的状态，异常时还会有Canceling和Canceled状态
 
 ## 正常操作
-* 以支付业务举例
+* 以支付业务举例，一般的支付流程是，用户购买东西，生成一个待支付的订单，然后支付这个订单
 
 * 生成带有初始化状态的transaction记录和未知付的订单
 ``` python

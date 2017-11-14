@@ -2,6 +2,7 @@
 title: Fluent python笔记
 date: 2017-11-13 10:47:30
 tags:
+    - python
 ---
 
 ## An array of sequence

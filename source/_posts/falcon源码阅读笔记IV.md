@@ -6,9 +6,9 @@ tags:
     - 源码笔记
 ---
 
-## Response class
+### Response class
 
-### \__init__
+#### \__init__
 ```` python
     def __init__(self):
         self.status = '200 OK'
@@ -32,13 +32,13 @@ tags:
 
 可以看到，在默认的状态码为200 OK，默认的_headers为{}
 
-#### 此外，还有一些方法也被放在了这个类中，比如set_headers，get_header， set_cookie等
+##### 此外，还有一些方法也被放在了这个类中，比如set_headers，get_header， set_cookie等
 
 - 注意：跟headers有关的操作，比如set_header等，headers全部都是小写
 - 如果预设的headers里有大写，比如Content-Type:application/json，如果想在返回中改为别的格式，由于set_header会将字母全部转化为小写，覆盖会失败，也就是修改不会成功
 
 
-### 再回头看API class 中的\__call__函数
+#### 再回头看API class 中的\__call__函数
 ````python
 if req.method == 'HEAD' or resp.status in self._BODILESS_STATUS_CODES:
             body = []

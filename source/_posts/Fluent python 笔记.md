@@ -5,12 +5,12 @@ tags:
     - python
 ---
 
-## An array of sequence
+### An array of sequence
 
 
 * 除了常见的mutable, immutable分类外，还有container, flat的分法, flat包括str, bytes, bytearray, memoryview, array.array, 这些都只能存原始数据类型, container包括list, tuple, collections.deque, 这些可以存其他类型
 
-### named tuple
+#### named tuple
 ``` python
 from collections import namedtuple
 City = namedtuple('City', 'name county population coordinates')
@@ -23,7 +23,7 @@ City(name='Tokyo', county='JP', population=36.933, coordinates=(35.689722, 139.1
 ```
 
 
-### deque
+#### deque
 * 一般的序列中, pop和append都是操作最后进栈的数据(LIFO), deque可以从左或者从右操作, 类似于双向链表
 ``` python
 from collections import deque

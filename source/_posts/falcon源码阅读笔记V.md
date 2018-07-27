@@ -6,12 +6,12 @@ tags:
     - 源码笔记
 ---
 
-## Hook decorators
+### Hook decorators
 
-### falcon有两个修饰器，before和after，顾名思义，就是分别在responder运行之前和之后运行的
+#### falcon有两个修饰器，before和after，顾名思义，就是分别在responder运行之前和之后运行的
 
-### before
-#### 这个修饰器实际是一个闭包，将action通过闭包传到内部函数_before
+#### before
+##### 这个修饰器实际是一个闭包，将action通过闭包传到内部函数_before
 
 * action(req, resp, resource, params)
 * _before首先获得responder
@@ -25,6 +25,6 @@ tags:
 setattr(resource, responder_name, do_before_all)
 ````
 
-### after
-#### 和before类似，只是处理顺序变成了先responder后shim
+#### after
+##### 和before类似，只是处理顺序变成了先responder后shim
 * action(req, response, resource)

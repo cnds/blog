@@ -16,7 +16,7 @@ tags:
 > 除了常用的GET,PUT,POST,DELETE之外，还有一个PATCH方法（[RFC 5789](https://tools.ietf.org/html/rfc5789)），是比较容易被忽略的，很多情况下都被PUT取代了，但是在定义上，这两个方法还是不太一样的
 
 |Method|Description|Is Idempotent|
-|:-----|:---------:|------------:|
+|:----:|:---------:|:-----------:|
 |GET|Return the current value of an object|True|
 |PUT|Replace an object, or create a named object, when applcable|True|
 |DELETE|Delete an object|True|

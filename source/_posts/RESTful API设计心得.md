@@ -1,5 +1,9 @@
-#### 参考Microsoft api guidelines
-https://github.com/Microsoft/api-guidelines/blob/vNext/Guidelines.md
+---
+title: RESTful API 设计原则
+date: 2018-07-29 22:39:00
+tags:
+    - tips
+---
 
 #### 错误类型
 > 错误分为Errors和Faults两种
@@ -32,3 +36,12 @@ https://github.com/Microsoft/api-guidelines/blob/vNext/Guidelines.md
 #### 集合的处理
 ##### 路由的格式
 > https://{serviceRoot}/{collection}/{id}
+
+##### 大数据集合
+> 一般大数据的集合，服务器都会采用分页来处理，在第一个集合中必须带有下一页都地址(nextLink)，这样既能保证每次单独使用API时数据量不大，又可以在处理需要取得所有数据的情况时，根据nextLink取得所有数据
+
+#### 长时间运行的操作
+> 有时候会碰到需要长时间计算才能有结果的请求，这时候就时长时间运行的操作，类似于异步
+* 客户端发出请求后，服务端不能直接返回结果，需要返回HTTP/1.1 202 Accepted 作为结果，这个202的状态不带任何返回的body。headers中带Operation-Location表示实际正在操作的集合，这个location支持GET查询，可以查询到操作的状态(NotStarted|Running|Succeeded|Failed)，还可以提供操作开始结束时间，甚至完成的百分比，如果是完成状态，需要带上请求的resourceLocation。有需要的话，可以在headers带上Retry-After字段，提示客户端在一段时间后重新请求。
+* 比如从 https://api.example.com/v1.0/datbases/db1 请求，得到202状态和Operation-Location(https://api.example.com/v1.0/operations/123)，客户端就可以查询合格Operation-Location得到操作的状态，如果是成功了，同时还会得到resourceLocation(https://api.example.com/v1.0/datbases/db1)，如果有Retry-After header，客户端在一段时间后再次请求Operation-Location
+* 除了Retry-After方式之外，还有可以通过推送的方式通知客户端操作完成，这样需要客户端在请求操作的时候同时订阅消息。

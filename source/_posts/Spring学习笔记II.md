@@ -42,11 +42,11 @@ tags:
 
 * 编写切点(Pointcut)
 
-  > 切点表达式，设置切点方法执行时触发通知(advise)，```execution(* com.Test.exec(...))```，其中execution代表方法执行时触发，第一个*表示返回任意类型， 中间的com.Test表示方法所属的类，exec表示方法, ...表示使用任意参数
+  > 切点表达式，设置切点方法执行时触发通知(advise)，`execution(* com.Test.exec(...))`，其中execution代表方法执行时触发，第一个*表示返回任意类型， 中间的com.Test表示方法所属的类，exec表示方法, ...表示使用任意参数
   >
-  > 切点表达式里还可以通过&&、||和!来组合命令, ```execution(* com.Test.exec(...) && within(com.Test1.*))```表示com.Test包内的任何方法被调用时执行表达式
+  > 切点表达式里还可以通过&&、||和!来组合命令, `execution(* com.Test.exec(...) && within(com.Test1.*))`表示com.Test包内的任何方法被调用时执行表达式
   >
-  > 还可以使用```execution(* com.Test.exec(...) && bean('test2'))```表示切面的通知会被编织到ID为test2的bean中
+  > 还可以使用`execution(* com.Test.exec(...) && bean('test2'))`表示切面的通知会被编织到ID为test2的bean中
 
 
 * 定义切面(Aspect)
@@ -63,13 +63,13 @@ tags:
   > }
   > ```
   >
-  > 利用```@Pointcut```注解设置切点表达式，如上面的代码，设置了方法pointDemo为切点表达式，这样就可以在别的地方重用，pointDemo是一个空函数，只做标识用，供```@Pointcut```注解依附
+  > 利用`@Pointcut`注解设置切点表达式，如上面的代码，设置了方法pointDemo为切点表达式，这样就可以在别的地方重用，pointDemo是一个空函数，只做标识用，供`@Pointcut`注解依附
 
   **_整个切面表达式的语法含义比较明确，就是before|after某个函数之前，执行这个被注解的通知_**
 
 * 自动代理
 
-  > 使用```@EnableAspectJAutoProxy```注解可以实现自动代理，自动使用```@Aspect```注解的bean创建一个代理
+  > 使用`@EnableAspectJAutoProxy`注解可以实现自动代理，自动使用`@Aspect`注解的bean创建一个代理
   >
   > ```java
   > @EnableAspectJAutoProxy
@@ -90,7 +90,7 @@ tags:
 
 * 带参数的切面表达式
 
-  > 如果需要在表达式中带参数，则表达式要写成类似```@Pointcut(* execution(**  com.Test.exec(int)) && args(inputNumber))```，exec函数中写接受参数的类型，args中写参数名
+  > 如果需要在表达式中带参数，则表达式要写成类似`@Pointcut(* execution(**  com.Test.exec(int)) && args(inputNumber))`，exec函数中写接受参数的类型，args中写参数名
   >
   > 实际上，args(inputNumber)的意思是exec()的参数也会传递到通知方法(advise)中，这样就可以做到切点到通知方法的参数传递
   >
@@ -111,7 +111,7 @@ tags:
 
 * 引入新功能 (Introductions)
 
-  > 通过```@DeclareParents```注解，将新的接口引入到bean中，语法是```@DeclareParents(value="com.Test.*", defaultImpl=newInterfaceImpl.class)```
+  > 通过`@DeclareParents`注解，将新的接口引入到bean中，语法是`@DeclareParents(value="com.Test.*", defaultImpl=newInterfaceImpl.class)`
   >
   > 可以看出来，这个注解的意思就是为value增加一个新的接口，这里引入的是newInterface
   >
@@ -130,5 +130,3 @@ tags:
   > 
   > }
   > ```
-  >
-  >

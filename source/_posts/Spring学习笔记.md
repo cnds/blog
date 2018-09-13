@@ -27,7 +27,7 @@ tags:
   >
   > 也可以自己指定bean ID，```@Component("testComponent2")```
 
-* 通过```@ComponentScan```注解扫描组件
+* 通过```@ComponentScan```注解扫描组件
 
   > 默认扫描相同的包
   >

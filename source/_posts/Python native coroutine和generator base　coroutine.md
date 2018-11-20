@@ -18,7 +18,7 @@ print(next.send(20))
 
 
 #### asyncio.coroutine/yield from 和 async/await
-> 这两种协程的方式没有功能上的区别，但是不能混用，只不过前者是给予generator的，后者是python3.5之后的原生协程。比如不能使用async/yield from。
+> 这两种协程的方式没有功能上的区别，但是不能混用，只不过前者是给予generator的，后者是python3.5之后的原生协程。比如不能使用async/yield from。
 > 但是这两种方式却可以同时使用, 即可以在asyncio.coroutine/yield中使用async/await，反之亦然。
 ``` python
 import asyncio

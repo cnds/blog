@@ -25,7 +25,7 @@ tags:
   >
   > bean的ID就是testComponent
   >
-  > 也可以自己指定bean ID，```@Component("testComponent2")```
+  > 也可以自己指定bean ID，`@Component("testComponent2")`
 
 * 通过`@ComponentScan`注解扫描组件
 
@@ -40,7 +40,10 @@ tags:
   > 实际就是将bean实例化，根据被注解对象尝试找到需要实例化的bean并传入被注解对象；如果没找到需要实例化的bean则会抛出一个异常，通过`@Autowired(required=false)`可以避免异常的抛出；如果找到多个可实例化的bean，也会抛出异常
   >
   > `@Autowired`可以用在构造器、方法或者变量上
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2e035bd544a4a7cd9eaffda647c544c2a17e39e9
 
 
 #### 通过Java代码手动装配bean
@@ -70,13 +73,16 @@ tags:
   > }
   > ```
   >
-  > 这种方法对依赖的bean的创建方式没有限制，这样的话，bean可以通过手动装配，也可以自动装配产生
+  > 这种方法对依赖的bean的创建方式没有限制，这样的话，被依赖的bean可以通过手动装配，也可以自动装配产生
 
 
 
   _可以看到，自动装配的步骤比较清晰，定义 -> 扫描 -> 装配，而手动装配时，由于没有自动扫描，只有一个`@Bean`注解，完成bean的定义和装配_
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 2e035bd544a4a7cd9eaffda647c544c2a17e39e9
 
 
 #### 解决自动装配时找到多个满足条件的bean的问题
@@ -152,9 +158,17 @@ tags:
   > }
   > ```
 
+<<<<<<< HEAD
 * 通过`getProterty()`可以获取`env`中的属性，这个方法可以通过重载设置默认值和自动转换为新类型，不设置默认值且这个属性不存在的话，获取到的是`null`
 
   > `getRequiredProperty()`获取值则表明这个属性必须被定义，否则会抛出异常
 
 * Spring也支持通过占位符实现外部属性注入，用法为`${value}`，同时需要配置一个`PropertySourcesPlaceholderConfigurer` bean
 
+=======
+* 通过`getProterty()`可以获取`env`中的属性，这个方法可以通过重载设置默认值和自动转换为新类型，不设置默认值且这个属性不存在的话，获取到的是```null```
+
+  > `getRequiredProperty()`获取值则表明这个属性必须被定义，否则会抛出异常
+
+* Spring也支持通过占位符实现外部属性注入，用法为`${value}`，同时需要配置一个`PropertySourcesPlaceholderConfigurer` bean
+>>>>>>> 2e035bd544a4a7cd9eaffda647c544c2a17e39e9

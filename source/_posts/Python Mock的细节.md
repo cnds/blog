@@ -1,4 +1,10 @@
-# Python Mock的细节
+---
+title: Python Mock 的细节
+date: 2019-03-01 17:16:28
+tags:
+    - python
+    - mock
+---
 
 * Mock是Python unittest中的一个模块，用来模拟函数的返回值，但在mock某个函数时，需要注意，不同的函数有不同的表现
 
